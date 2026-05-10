@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0b1020">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="RecallForge">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>RecallForge Psychology</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="icon.svg">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div>
+        <h1>RecallForge</h1>
+        <p id="deckSubtitle">A Level Psychology flashcards for active recall.</p>
+      </div>
+      <button id="installButton" class="ghost hidden" type="button">Install</button>
+    </header>
+
+    <main class="layout">
+      <section class="panel controls-panel" aria-label="Deck controls">
+        <label class="field-label" for="deckSelect">Deck</label>
+        <select id="deckSelect"></select>
+
+        <div class="stats-grid">
+          <div>
+            <span id="cardCount">0</span>
+            <small>cards</small>
+          </div>
+          <div>
+            <span id="dueCount">0</span>
+            <small>due</small>
+          </div>
+          <div>
+            <span id="correctCount">0</span>
+            <small>green</small>
+          </div>
+        </div>
+
+        <div class="button-row">
+          <button id="studyDueButton" type="button">Study Due</button>
+          <button id="studyAllButton" class="secondary" type="button">Study All</button>
+        </div>
+        <button id="resetProgressButton" class="danger-soft" type="button">Reset Progress</button>
+
+        <div class="card-list" id="cardList" aria-label="Cards in selected deck"></div>
+      </section>
+
+      <section class="panel study-panel" aria-label="Study session">
+        <div class="session-header">
+          <div>
+            <h2 id="modeText">Study session</h2>
+            <p id="sessionStats">Choose a deck and start a session.</p>
+          </div>
+          <span id="accuracyBadge">Accuracy: --</span>
+        </div>
+
+        <div class="prompt-block">
+          <span class="eyebrow">Prompt</span>
+          <h3 id="promptText">Start a session to begin.</h3>
+        </div>
+
+        <div class="answer-block">
+          <span id="answerModeText" class="eyebrow">Your recall</span>
+          <textarea id="answerInput" rows="4" autocomplete="off" spellcheck="false"></textarea>
+          <div id="choiceList" class="choice-list hidden"></div>
+        </div>
+
+        <p id="feedbackText" class="feedback"></p>
+
+        <div id="expectedPanel" class="expected-panel hidden">
+          <span class="eyebrow">Expected answer</span>
+          <p id="expectedAnswer"></p>
+        </div>
+
+        <div class="study-actions">
+          <button id="checkButton" type="button">Check recall</button>
+          <button id="againButton" class="secondary" type="button" disabled>Again</button>
+          <button id="gotItButton" type="button" disabled>Got it</button>
+          <button id="skipButton" class="ghost" type="button">Skip</button>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js" type="module"></script>
+</body>
+</html>
