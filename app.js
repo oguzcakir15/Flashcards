@@ -260,7 +260,7 @@ function splitTags(tags) {
 }
 
 function identifyDeck(tags) {
-  for (const deck of ["researches p1", "social influence", "memory", "attachment", "psychopathology"]) {
+  for (const deck of ["ao3", "approaches", "biopsychology", "researches p1", "social influence", "memory", "attachment", "psychopathology"]) {
     if (tags.has(deck)) return deck;
   }
   return "";

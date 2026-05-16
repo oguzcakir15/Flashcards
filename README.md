@@ -2,6 +2,8 @@
 
 This folder is the phone-friendly web/PWA version of RecallForge.
 
+Current decks: `Approaches`, `Biopsychology`, and `AO3`.
+
 ## Files to upload to GitHub Pages
 
 Upload every file in this folder:
